@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" prefHeight="800.0" prefWidth="1000.0" styleClass="root-pane"
+            stylesheets="@gallery.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.fx_5_charactergallery.GalleryController">
+
+    <!-- ================= TOP: banner + title picker ================= -->
+    <top>
+        <VBox alignment="CENTER" spacing="8.0" styleClass="header" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="title-label" text="Hall of Heroes" />
+                <Label styleClass="subtitle-label" text="Choose a hall, then click a hero to hear their words" />
+                <HBox alignment="CENTER" spacing="12.0">
+                    <children>
+                        <ComboBox fx:id="titleComboBox" onAction="#handleTitleSelected" prefWidth="320.0" promptText="Choose a hall..." />
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClear" styleClass="secondary-btn" text="Clear Gallery" />
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="16.0" left="20.0" right="20.0" top="16.0" />
+            </padding>
+        </VBox>
+    </top>
+
+    <!-- ================= CENTER: prev | MAIN | next + hero info ================= -->
+    <center>
+        <VBox alignment="CENTER" spacing="6.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" spacing="18.0">
+                    <children>
+                        <Button fx:id="prevButton" mnemonicParsing="false" onAction="#handlePrevious" styleClass="nav-btn" text="◀" />
+
+                        <!-- Small PREVIOUS image (clickable) -->
+                        <StackPane fx:id="prevCard" onMouseClicked="#handlePrevCardClick" styleClass="side-card">
+                            <children>
+                                <ImageView fx:id="prevImageView" fitHeight="200.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </StackPane>
+
+                        <!-- Big MAIN image -->
+                        <StackPane fx:id="mainCard" styleClass="main-card">
+                            <children>
+                                <ImageView fx:id="mainImageView" fitHeight="375.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" smooth="true" />
+                            </children>
+                        </StackPane>
+
+                        <!-- Small NEXT image (clickable) -->
+                        <StackPane fx:id="nextCard" onMouseClicked="#handleNextCardClick" styleClass="side-card">
+                            <children>
+                                <ImageView fx:id="nextImageView" fitHeight="200.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </StackPane>
+
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#handleNext" styleClass="nav-btn" text="▶" />
+                    </children>
+                </HBox>
+
+                <!-- Hero info, directly beneath the main image -->
+                <Label fx:id="nameLabel" styleClass="name-label" text="Welcome to the Hall of Heroes" />
+                <Label fx:id="titleLabel" styleClass="hero-title-label" text="Choose a hall above to begin" />
+                <Label fx:id="quoteLabel" alignment="CENTER" maxWidth="640.0" styleClass="quote-label" textAlignment="CENTER" wrapText="true" />
+                <Label fx:id="counterLabel" styleClass="counter-label" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="18.0" />
+            </padding>
+        </VBox>
+    </center>
+
+    <!-- ================= BOTTOM: 5 fixed thumbnails ================= -->
+    <!-- All five cards share ONE handler: handleThumbnailClick -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="14.0" styleClass="thumb-strip" BorderPane.alignment="CENTER">
+            <children>
+                <VBox fx:id="thumbCard0" alignment="CENTER" onMouseClicked="#handleThumbnailClick" spacing="4.0" styleClass="thumb-card">
+                    <children>
+                        <ImageView fx:id="thumbImage0" fitHeight="120.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="thumbLabel0" styleClass="thumb-label" />
+                    </children>
+                </VBox>
+                <VBox fx:id="thumbCard1" alignment="CENTER" onMouseClicked="#handleThumbnailClick" spacing="4.0" styleClass="thumb-card">
+                    <children>
+                        <ImageView fx:id="thumbImage1" fitHeight="120.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="thumbLabel1" styleClass="thumb-label" />
+                    </children>
+                </VBox>
+                <VBox fx:id="thumbCard2" alignment="CENTER" onMouseClicked="#handleThumbnailClick" spacing="4.0" styleClass="thumb-card">
+                    <children>
+                        <ImageView fx:id="thumbImage2" fitHeight="120.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="thumbLabel2" styleClass="thumb-label" />
+                    </children>
+                </VBox>
+                <VBox fx:id="thumbCard3" alignment="CENTER" onMouseClicked="#handleThumbnailClick" spacing="4.0" styleClass="thumb-card">
+                    <children>
+                        <ImageView fx:id="thumbImage3" fitHeight="120.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="thumbLabel3" styleClass="thumb-label" />
+                    </children>
+                </VBox>
+                <VBox fx:id="thumbCard4" alignment="CENTER" onMouseClicked="#handleThumbnailClick" spacing="4.0" styleClass="thumb-card">
+                    <children>
+                        <ImageView fx:id="thumbImage4" fitHeight="120.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="thumbLabel4" styleClass="thumb-label" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="18.0" left="20.0" right="20.0" top="14.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
+

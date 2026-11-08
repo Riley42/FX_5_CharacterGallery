@@ -1,0 +1,33 @@
+/* alert.css — loaded by Utils.createAlert() for every alert */
+
+.dialog-pane {
+    -fx-background-color: #1B1F3B;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: #E8E6F0;
+    -fx-font-size: 14px;
+    -fx-padding: 10;
+}
+
+.dialog-pane .button-bar {
+    -fx-background-color: #262C52;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #D4AF37;
+    -fx-text-fill: #1B1F3B;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #E8C65A;
+}
+
+.dialog-pane .button:pressed {
+    -fx-background-color: #A88A28;
+}

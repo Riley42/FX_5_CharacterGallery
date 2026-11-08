@@ -1,0 +1,210 @@
+.root-pane {
+    -fx-background-color: #1B1F3B;
+    -fx-font-family: "Segoe UI", "Helvetica", sans-serif;
+}
+
+/* ================= HEADER ================= */
+.header {
+    -fx-background-color: #262C52;
+    -fx-border-color: transparent transparent #D4AF37 transparent;
+    -fx-border-width: 0 0 3 0;
+}
+
+.title-label {
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #D4AF37;
+}
+
+.subtitle-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #A9A6BF;
+}
+
+/* ================= COMBOBOX ================= */
+.combo-box {
+    -fx-background-color: #1B1F3B;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #E8E6F0;
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #D4AF37;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* The drop-down list that pops open */
+.combo-box-popup .list-view {
+    -fx-background-color: #262C52;
+    -fx-border-color: #D4AF37;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #262C52;
+    -fx-text-fill: #E8E6F0;
+    -fx-padding: 6 10 6 10;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #D4AF37;
+    -fx-text-fill: #1B1F3B;
+}
+
+/* ================= BUTTONS ================= */
+.nav-btn {
+    -fx-background-color: #D4AF37;
+    -fx-text-fill: #1B1F3B;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 50;
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.nav-btn:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.nav-btn:disabled {
+    -fx-opacity: 0.35;
+}
+
+.secondary-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-text-fill: #D4AF37;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: #D4AF37;
+    -fx-background-radius: 6;
+    -fx-text-fill: #1B1F3B;
+}
+
+.secondary-btn:pressed {
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+}
+
+/* ================= CAROUSEL ================= */
+
+/* Big center image: gold frame with a shadow */
+.main-card {
+    -fx-background-color: #262C52;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 3;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 22, 0.25, 0, 6);
+}
+
+/* Small previous / next images: faded until hovered */
+.side-card {
+    -fx-background-color: #262C52;
+    -fx-border-color: #A9A6BF;
+    -fx-border-width: 2;
+    -fx-padding: 6;
+    -fx-opacity: 0.55;
+    -fx-cursor: hand;
+}
+
+.side-card:hover {
+    -fx-opacity: 1.0;
+    -fx-border-color: #D4AF37;
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+}
+
+.side-card:pressed {
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+/* ================= HERO INFO ================= */
+.name-label {
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #D4AF37;
+    -fx-padding: 8 0 0 0;
+}
+
+.hero-title-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #A9A6BF;
+    -fx-font-style: italic;
+}
+
+.quote-label {
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 19px;
+    -fx-font-style: italic;
+    -fx-text-fill: #E8E6F0;
+    -fx-padding: 6 0 2 0;
+}
+
+.counter-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #A9A6BF;
+}
+
+/* ================= THUMBNAILS ================= */
+.thumb-strip {
+    -fx-background-color: #262C52;
+    -fx-border-color: #D4AF37 transparent transparent transparent;
+    -fx-border-width: 3 0 0 0;
+}
+
+.thumb-card {
+    -fx-background-color: #1B1F3B;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-padding: 6;
+    -fx-min-width: 120;
+    -fx-cursor: hand;
+}
+
+.thumb-card:hover {
+    -fx-border-color: #D4AF37;
+    -fx-translate-y: -4;
+}
+
+.thumb-card:pressed {
+    -fx-translate-y: 0;
+}
+
+/* Added / removed by the controller for the hero on display */
+.thumb-selected {
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 3;
+    -fx-background-color: #333A6B;
+}
+
+.thumb-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #E8E6F0;
+}
